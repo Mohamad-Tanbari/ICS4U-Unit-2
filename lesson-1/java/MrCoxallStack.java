@@ -9,6 +9,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The MrCoxxalStack class.
+ */
 public class MrCoxallStack {
     /**
      * The list used for the stack.
@@ -20,7 +23,7 @@ public class MrCoxallStack {
      *
      * @param str A string that you would like to append.
      */
-    public void addStr(String str) {
+    public void pushStr(String str) {
         this.stackList.add(str);
     }
 

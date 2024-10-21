@@ -16,17 +16,18 @@ export class MrCoxallStack {
    * This method pushes a string into the stack.
    *
    * @param {string} pushedStr - The string to push into the stack.
+   * @return {void}
    */
-  public pushStr(pushedStr) {
+  public pushStr (pushedStr): void {
     this.stackList.push(pushedStr)
   }
 
   /**
    * This method returns the stack as a string.
    *
-   * @returns {string} The stack as a string.
+   * @return {string} The stack as a string.
    */
-  public showStack() {
+  public showStack (): string {
     let stackValues = ''
     for (let counter = 0; counter < this.stackList.length; counter++) {
       stackValues = stackValues + this.stackList[counter] + ', '

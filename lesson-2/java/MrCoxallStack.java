@@ -10,22 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The MrCoxxalStack class.
+ * The MrCoxalStack class.
  */
 public class MrCoxallStack {
     /**
      * The list used for the stack.
      */
     private final List<String> stackList = new ArrayList<>();
-
-    /**
-     * The addStr method to append a string to the stack.
-     *
-     * @param str A string that you would like to append.
-     */
-    public void pushStr(String str) {
-        this.stackList.add(str);
-    }
 
     /**
      * The showStack method to show the stored values of the stack in a string.
@@ -40,5 +31,36 @@ public class MrCoxallStack {
         stackValues = stackValues.substring(0, stackValues.length() - 2);
 
         return stackValues;
+    }
+
+    /**
+     * The addStr method to append a string to the stack.
+     *
+     * @param str A string that you would like to append.
+     */
+    public void pushStr(String str) {
+        this.stackList.add(str);
+    }
+
+    /**
+     * The popItem method to remove the top item and return it in a string.
+     *
+     * @return The top item in a string
+     */
+    public String popItem() {
+        // Get the size of the list
+        final int stackLength = this.stackList.size();
+        String outputString;
+        if (stackLength < 1) {
+            // Return this if it is empty
+            outputString = "The stack is empty!";
+        }
+        // Pick the top item
+        outputString = this.stackList.get(stackLength - 1);
+
+        // Remove item from list
+        this.stackList.remove(stackLength - 1);
+
+        return outputString;
     }
 }

@@ -28,21 +28,16 @@ export class MrCoxallStack {
   }
 
   /**
-   * This method pushes a string into the stack.
-   *
-   * @param {string} pushedStr - The string to push into the stack.
-   * @return {void}
-   */
-  public set pushStr (pushedStr: string): void {
-    this.stackList.push(pushedStr)
-  }
-
-  /**
    * This method removes the top item and returns it as a string.
    *
    * @return {string}
    */
-  public popItem (): string {
+  public get popItem (): string {
+    // Ensure that the stack is full.
+    if (this.stackList.length < 1) {
+      return 'The stack is empty!'
+    }
+
     // Grab top item
     const topItemIndex = this.stackList.length - 1
     const topItem = this.stackList[topItemIndex]
@@ -51,5 +46,15 @@ export class MrCoxallStack {
     this.stackList.splice(topItemIndex, 1)
 
     return topItem
+  }
+
+  /**
+   * This method pushes a string into the stack.
+   *
+   * @param {string} pushedStr - The string to push into the stack.
+   * @return {void}
+   */
+  public pushStr (pushedStr: string): void {
+    this.stackList.push(pushedStr)
   }
 }

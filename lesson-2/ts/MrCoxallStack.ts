@@ -10,7 +10,7 @@ export class MrCoxallStack {
   /**
    * The MrCoxallStack list
    */
-  private stackList: string[] = []
+  private readonly stackList: string[] = []
 
   /**
    * This method returns the stack as a string.
@@ -41,7 +41,7 @@ export class MrCoxallStack {
     // Grab top item
     const topItemIndex = this.stackList.length - 1
     const topItem = this.stackList[topItemIndex]
-    
+
     // Remove the top item
     this.stackList.splice(topItemIndex, 1)
 

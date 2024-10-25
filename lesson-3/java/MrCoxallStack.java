@@ -63,4 +63,31 @@ public class MrCoxallStack {
 
         return outputString;
     }
+
+    /**
+     * The isEmpty method to check if the stack contains anything.
+     *
+     * @return A true or false in a string
+     */
+    public String isEmpty() {
+        final boolean empty;
+        if (this.stackList.size() < 1) {
+            empty = true;
+        } else {
+            empty = false;
+        }
+
+        final String boolAsString = Boolean.toString(empty);
+
+        return boolAsString;
+    }
+
+    /**
+     * The size method to check the size of the stack.
+     *
+     * @return An integer value of the stack's size
+     */
+    public int size() {
+        return this.stackList.size();
+    }
 }

@@ -68,9 +68,9 @@ export class MrCoxallStack {
   /**
    * This method gets the size of the stack
    *
-   * @return {integer}
+   * @return {number}
    */
-  public get size (): integer {
+  public get size (): number {
     return this.stackList.length
   }
 

@@ -14,13 +14,12 @@ function blowUp (string: string): string {
     // Variables
     let cachedNumber: number = 1
     let cachedLetter: string = ''
-    const isLargeEnough: boolean = stringCopy.length > 1
 
     // Check if there is a number followed by a letter
     const tempNumber = parseInt(stringCopy[0])
     // Only check the following number if the string is large enough
     let tempNumber2: number = -1
-    if (isLargeEnough) {
+    if (stringCopy.length > 1) {
       tempNumber2 = parseInt(stringCopy[1])
     }
 
@@ -35,7 +34,7 @@ function blowUp (string: string): string {
         stringCopy.slice(2)
     } else {
       // If the next two characters don't fit the format
-      newString = newString += stringCopy[0]
+      newString += stringCopy[0]
       stringCopy = stringCopy.slice(0, 0) +
         stringCopy.slice(1)
     }

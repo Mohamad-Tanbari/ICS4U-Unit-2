@@ -37,6 +37,11 @@ final class Dogs {
         System.out.println("Dog items 2: " + dogStack.showStack());
         System.out.println("The size of the stack is 2: " + dogStack.size());
         System.out.println("Is the stack empty? " + dogStack.isEmpty());
+        System.out.println("Peeked item: " + dogStack.peekItem());
+        System.out.println("Clearing stack...");
+        dogStack.clearStack();
+        System.out.println("The size of the stack after clearing: "
+            + dogStack.size());
 
         System.out.println("\nDone.");
     }

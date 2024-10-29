@@ -37,7 +37,11 @@ final class Colors {
         System.out.println("Color items 2: " + colorStack.showStack());
         System.out.println("The size of the stack is 2: " + colorStack.size());
         System.out.println("Is the stack empty? " + colorStack.isEmpty());
-        System.out.println("");
+        System.out.println("Peeked item: " + colorStack.peekItem());
+        System.out.println("Clearing stack...");
+        colorStack.clearStack();
+        System.out.println("The size of the stack after clearing: "
+            + colorStack.size());
 
         System.out.println("\nDone.");
     }

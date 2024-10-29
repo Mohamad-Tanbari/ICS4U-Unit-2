@@ -37,7 +37,11 @@ final class Fruits {
         System.out.println("Fruit items 2: " + fruitStack.showStack());
         System.out.println("The size of the stack is 2: " + fruitStack.size());
         System.out.println("Is the stack empty? " + fruitStack.isEmpty());
-        System.out.println("");
+        System.out.println("Peeked item: " + fruitStack.peekItem());
+        System.out.println("Clearing stack...");
+        fruitStack.clearStack();
+        System.out.println("The size of the stack after clearing: "
+            + fruitStack.size());
 
         System.out.println("\nDone.");
     }

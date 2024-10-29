@@ -88,7 +88,7 @@ export class MrCoxallStack {
    *
    * @return {string}
    */
-  public peekItem (): string {
+  public get peekItem (): string {
     if (this.stackList.length < 1 ) {
       return 'The stack is empty!'
     }
@@ -106,6 +106,8 @@ export class MrCoxallStack {
    * @return {void}
    */
   public clearStack (): void {
-    this.stackList.splice(-1, this.stackList.length)
+    while (this.stackList.length > 0) {
+      this.stackList.splice(-1, 1)
+    }
   }
 }

@@ -90,4 +90,26 @@ public class MrCoxallStack {
     public int size() {
         return this.stackList.size();
     }
+
+    /**
+     * The peek method to check what the top item is without modifying it.
+     *
+     * @return A string containing the top item
+     */
+    public String peekItem() {
+        final String topItem = this.stackList.get(this.stackList.size() -1);
+
+        return topItem;
+    }
+
+    /**
+     * The clear method to remove every item from the stack.
+     *
+     * @return nothing
+     */
+    public void clearStack() {
+        while (this.stackList.size() > 0) {
+          this.stackList.remove(0);
+        }
+    }
 }

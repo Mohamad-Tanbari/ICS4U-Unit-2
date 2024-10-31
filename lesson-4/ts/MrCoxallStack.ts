@@ -89,13 +89,13 @@ export class MrCoxallStack {
    * @return {string}
    */
   public get peekItem (): string {
-    if (this.stackList.length < 1 ) {
+    if (this.stackList.length < 1) {
       return 'The stack is empty!'
     }
 
     // Grab top item
     const topItemIndex = this.stackList.length - 1
-    
+
     // Return top item
     return this.stackList[topItemIndex]
   }

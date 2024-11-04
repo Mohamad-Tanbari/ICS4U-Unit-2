@@ -91,6 +91,21 @@ export default class Vehicle {
   }
 
   /**
+   * This getter gives info on all properties of the vehicle.
+   *
+   * @return {string} A string containing all the property values.
+   */
+  public get status (): string {
+    const statusString = `-> Speed: ${this.privateSpeed}\n` +
+                         `-> Max Speed: ${this.maxSpeed}\n` +
+                         `-> Number of doors: ${this.numberOfDoors}\n` +
+                         `-> Liscense Plate: ${this.licensePlate}\n` +
+                         `-> Color: ${this.privateColour}`
+
+    return statusString
+  }
+
+  /**
    * The accelerate method to increase the speed of the vehicle.
    *
    * @param {number} accelerationPower - The intensity of the acceleration.

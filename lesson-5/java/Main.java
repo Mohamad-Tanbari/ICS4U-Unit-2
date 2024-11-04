@@ -44,8 +44,7 @@ final class Main {
         final Vehicle fordFocus = new Vehicle("white", "B40-C4RR0",
             fourConst, twoHundredEightyFourConst);
 
-        System.out.println(statusString);
-        fordFocus.status();
+        System.out.println(statusString + fordFocus.status());
 
         System.out.println("Accelerating, 10 of power for 10 sec.");
         fordFocus.accelerate(tenConst, tenConst);
@@ -62,8 +61,7 @@ final class Main {
         final Vehicle ferrari = new Vehicle("red", "VHD-35HU", 2,
             threeHundredTwentyConst);
 
-        System.out.println(statusString);
-        ferrari.status();
+        System.out.println(statusString + ferrari.status());
 
         System.out.println("Accelerating, 100 of power for 4 sec.");
         ferrari.accelerate(oneHundredConst, fourConst);
@@ -84,8 +82,7 @@ final class Main {
         final Vehicle citroenAmi = new Vehicle("blue", "FS-695-DQ",
             fiveConst, fortyFiveConst);
 
-        System.out.println(statusString);
-        citroenAmi.status();
+        System.out.println(statusString + citroenAmi.status());
 
         System.out.println("Accelerating, 5 of power for 10 sec.");
         citroenAmi.accelerate(fiveConst, tenConst);

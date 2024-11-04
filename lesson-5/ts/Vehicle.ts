@@ -113,7 +113,7 @@ export default class Vehicle {
    */
   public accelerate (accelerationPower: number,
     accelerationTime: number): void {
-    this.privateSpeed = (accelerationPower * accelerationTime) + this.speed
+    this.privateSpeed = (accelerationPower * accelerationTime) + this.privateSpeed
 
     // Ensure that the vehicle does not accelerate beyond max speed
     if (this.privateSpeed > this.maxSpeed) {

@@ -97,7 +97,12 @@ public class MrCoxallStack {
      * @return A string containing the top item
      */
     public String peekItem() {
-        final String topItem = this.stackList.get(this.stackList.size() - 1);
+        final String topItem;
+        if (this.stackList.size() < 0) {
+            topItem = "The stack is empty!";
+        } else {
+            topItem = this.stackList.get(this.stackList.size() - 1);
+        }
 
         return topItem;
     }

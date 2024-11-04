@@ -6,7 +6,7 @@
  * Since: 2024-10-31
  */
 
-export class Vehicle {
+export default class Vehicle {
   /**
    * The liscense plate of the vehicle.
    */

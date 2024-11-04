@@ -56,4 +56,3 @@ citroenAmi.colour = 'purple'
 console.log(`New color: ${citroenAmi.colour}`)
 
 console.log('\nDone.')
-

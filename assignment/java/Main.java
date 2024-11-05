@@ -68,6 +68,7 @@ public final class Main {
      * @param args unused.
      */
     public static void main(String[] args) {
+        System.out.println("String before blow up: 3a2b55");
         System.out.println(blowUp("3a2b55"));
     }
 }

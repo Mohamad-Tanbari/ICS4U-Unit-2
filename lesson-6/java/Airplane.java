@@ -1,5 +1,5 @@
 /*
- * The airplane parent class
+ * The airplane parent class.
  *
  * @author Mohamad Tanbari
  * @version 1.0.0
@@ -13,7 +13,7 @@ public class Airplane {
     /**
      * The speed property.
      */
-    protected int speed;
+    private int speed;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ public class Airplane {
      * @param speed The speed to set the airplane to.
      */
     public void setSpeed(int speed) {
-      this.speed = speed;
+        this.speed = speed;
     }
 
     /**
@@ -35,6 +35,6 @@ public class Airplane {
      * @return Speed as an integer.
      */
     public int getSpeed() {
-      return this.speed;
+        return this.speed;
     }
 }

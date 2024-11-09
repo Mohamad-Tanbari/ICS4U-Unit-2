@@ -1,6 +1,6 @@
 /**
  * This is the airplane class.
- * 
+ *
  * Author: Mohamad Tanbari
  * Version: 1.0.0
  * Since: 2024-11-05

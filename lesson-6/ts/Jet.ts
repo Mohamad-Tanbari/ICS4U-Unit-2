@@ -18,19 +18,11 @@ export class Jet extends Airplane {
   private readonly MULTIPLIER: number = 2
 
   /**
-   * The constructor.
-   */
-  constructor() {
-    // Call the constructor ofthe parent class.
-    super()
-  }
-
-  /**
    * The setter for jet speed.
    *
    * @param {number} speed - The new speed to set the jet to.
    */
-  public set speed(newSpeed: number) {
+  public set speed (newSpeed: number) {
     if (newSpeed < 0) {
       super.speed = 0
     } else {
@@ -50,7 +42,7 @@ export class Jet extends Airplane {
   /**
    * The accelerate method of the jet class.
    */
-  public accelerate(): void {
+  public accelerate (): void {
     super.speed = super.speed * 2
   }
 }

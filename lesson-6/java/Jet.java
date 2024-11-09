@@ -16,13 +16,6 @@ public class Jet extends Airplane {
     private static final int MULTIPLIER = 2;
 
     /**
-     * Constructor.
-     */
-    public Jet() {
-        super();
-    }
-
-    /**
      * The modified speed setter.
      *
      * @param speed - The new speed to set the jet to.

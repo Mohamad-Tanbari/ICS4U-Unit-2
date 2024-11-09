@@ -7,7 +7,7 @@
  */
 
 /**
- * The airplane class
+ * The airplane class.
  */
 public class Airplane {
     /**

@@ -9,36 +9,55 @@
 /**
  * The fly test class.
  */
-public class FlyTest {
-  /**
-   * Prevent instantiation.
-   */
-  private FlyTest() { }
+public final class FlyTest {
+    /**
+     * The initial speed for the biplane.
+     */
+    static final int BIPLANE_SPEED = 212;
 
-  /**
-   * The main method
-   *
-   * @param args Not used.
-   */
-  public static void main(String[] args) {
-    Airplane biplane = new Airplane();
-    biplane.setSpeed(212);
-    System.out.println(biplane.getSpeed());
+    /**
+     * The initial speed for the boeing.
+     */
+    static final int BOEING_SPEED = 422;
 
-    Jet boeing = new Jet();
-    boeing.setSpeed(422);
-    System.out.println(boeing.getSpeed());
+    /**
+     * The loop length.
+     */
+    static final int LOOP_LENGTH = 4;
 
-    for (int counter = 0; counter < 4; counter++) {
-      boeing.accelerate();
-      System.out.println(boeing.getSpeed());
-      if (boeing.getSpeed() > 5000) {
-        biplane.setSpeed(biplane.getSpeed() * 2);
-      } else {
-        boeing.accelerate();
-      }
+    /**
+     * The speed in the if statement.
+     */
+    static final int MAX_SPEED = 5000;
+
+    /**
+     * Prevent instantiation.
+     */
+    private FlyTest() { }
+
+    /**
+     * The main method.
+     *
+     * @param args Not used.
+     */
+    public static void main(String[] args) {
+        final Airplane biplane = new Airplane();
+        biplane.setSpeed(BIPLANE_SPEED);
+        System.out.println(biplane.getSpeed());
+
+        final Jet boeing = new Jet();
+        boeing.setSpeed(BOEING_SPEED);
+        System.out.println(boeing.getSpeed());
+
+        for (int counter = 0; counter < LOOP_LENGTH; counter++) {
+            boeing.accelerate();
+            System.out.println(boeing.getSpeed());
+            if (boeing.getSpeed() > MAX_SPEED) {
+                biplane.setSpeed(biplane.getSpeed() * 2);
+            } else {
+                boeing.accelerate();
+            }
+        }
+        System.out.println(biplane.getSpeed());
     }
-    System.out.println(biplane.getSpeed());
-  }
-
 }

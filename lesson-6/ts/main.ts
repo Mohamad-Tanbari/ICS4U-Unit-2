@@ -25,16 +25,19 @@ console.log(`The new speed of the plane is: ${normalPlane.speed}`)
 
 // Test the Jet sub class
 console.log('\n\n')
-const jet = new Jet()
+const jetObject = new Jet()
 console.log('Created a jet object.')
 
 // Check the speed
-console.log(`The speed of this jet is: ${jet.speed}`)
+console.log(`The speed of this jet is: ${jetObject.speed}`)
 
 // Change the speed
 console.log('Changing speed...')
-jet.speed = 20
+jetObject.speed = 20
 
 // Check the speed again
-console.log(`The new speed of the jet is: ${jet.speed}`)
+console.log(`The new speed of the jet is: ${jetObject.speed}`)
 
+// Accelerate jet
+jetObject.accelerate()
+console.log(`Jet after acceleration: ${jetObject.speed}`)

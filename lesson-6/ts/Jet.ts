@@ -30,8 +30,11 @@ export class Jet extends Airplane {
    *
    * @param {number} speed - The new speed to set the jet to.
    */
-  public set speed(speed: number) {
-    super.speed = speed * this.MULTIPLIER
+  public set speed(newSpeed: number) {
+    if (newSpeed < 0) {
+      super.speed = 0
+    }
+    super.speed = newSpeed * this.MULTIPLIER
   }
 
   /**

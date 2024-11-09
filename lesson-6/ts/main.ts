@@ -9,8 +9,6 @@
 import { Airplane } from './Airplane'
 import { Jet } from './Jet'
 
-console.log('Flight test')
-
 const biplane = new Airplane()
 biplane.speed = 212
 console.log(biplane.speed)

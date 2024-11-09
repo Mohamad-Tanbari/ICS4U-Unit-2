@@ -13,7 +13,7 @@ export class Airplane {
   /**
    * The speed property.
    */
-  protected _speed: number
+  private _speed: number = 0
 
   /**
    * The setter for the speed property.

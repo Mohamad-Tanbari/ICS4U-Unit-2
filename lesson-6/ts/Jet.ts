@@ -33,8 +33,18 @@ export class Jet extends Airplane {
   public set speed(newSpeed: number) {
     if (newSpeed < 0) {
       super.speed = 0
+    } else {
+      super.speed = newSpeed * this.MULTIPLIER
     }
-    super.speed = newSpeed * this.MULTIPLIER
+  }
+
+  /**
+   * Redefine the speed setter to prevent issues.
+   *
+   * @return {number} speed - The current speed of the jet.
+   */
+  public get speed (): number {
+    return super.speed
   }
 
   /**

@@ -9,35 +9,24 @@
 import { Airplane } from './Airplane'
 import { Jet } from './Jet'
 
-// Test the airplane class
-const normalPlane = new Airplane()
-console.log('Created an airplane object.')
+console.log('Flight test')
 
-// Check the speed
-console.log(`The speed of this airplane is: ${normalPlane.speed}`)
+const biplane = new Airplane()
+biplane.speed = 212
+console.log(biplane.speed)
 
-// Change the speed
-console.log('Changing speed...')
-normalPlane.speed = 20
+const boeing = new Jet()
+boeing.speed = 422
+console.log(boeing.speed)
 
-// Check the speed again
-console.log(`The new speed of the plane is: ${normalPlane.speed}`)
+for (let counter = 0; counter < 4; counter++) {
+  boeing.accelerate()
+  console.log(boeing.speed)
+  if (boeing.speed > 5000) {
+    biplane.speed = biplane.speed * 2
+  } else {
+    boeing.accelerate()
+  }
+}
 
-// Test the Jet sub class
-console.log('\n\n')
-const jetObject = new Jet()
-console.log('Created a jet object.')
-
-// Check the speed
-console.log(`The speed of this jet is: ${jetObject.speed}`)
-
-// Change the speed
-console.log('Changing speed...')
-jetObject.speed = 20
-
-// Check the speed again
-console.log(`The new speed of the jet is: ${jetObject.speed}`)
-
-// Accelerate jet
-jetObject.accelerate()
-console.log(`Jet after acceleration: ${jetObject.speed}`)
+console.log(biplane.speed)

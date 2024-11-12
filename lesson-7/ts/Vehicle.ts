@@ -20,35 +20,14 @@ export default class Vehicle {
   /**
    * The max speed of the Vehicle.
    */
-  private readonly maxSpeed: number
+  private readonly _maxSpeed: number
 
   /**
    * The constructor to change the values of the variables.
    */
-  constructor (colour: string,
-    liscensePlate: string,
-    numberOfDoors: number,
-    maxSpeed: number) {
+  constructor (colour: string, maxSpeed: number) {
     this.privateColour = colour
-    this.maxSpeed = maxSpeed
-  }
-
-  /**
-   * The getter for the licensePlate property.
-   *
-   * @return {string} licensePlate - The current license plate of the vehicle.
-   */
-  public get licensePlate (): string {
-    return this.privateLiscensePlate
-  }
-
-  /**
-   * The setter for the licensePlate property.
-   *
-   * @param {string} newLicensePlate - The new license plate you want to assign.
-   */
-  public set licensePlate (newLicensePlate: string) {
-    this.privateLiscensePlate = newLicensePlate
+    this._maxSpeed = maxSpeed
   }
 
   /**
@@ -79,18 +58,25 @@ export default class Vehicle {
   }
 
   /**
-   * This getter gives info on all properties of the vehicle.
+   * The setter for the speed property.
    *
-   * @return {string} A string containing all the property values.
+   * @param {number} newSpeed - The new speed to set the vehicle to.
    */
-  public get status (): string {
-    const statusString = `-> Speed: ${this.privateSpeed}\n` +
-                         `-> Max Speed: ${this.maxSpeed}\n` +
-                         `-> Number of doors: ${this.numberOfDoors}\n` +
-                         `-> Liscense Plate: ${this.licensePlate}\n` +
-                         `-> Color: ${this.privateColour}`
+  public set speed (newSpeed: number) {
+    if (newSpeed < 0) {
+      this.privateSpeed = 0
+    } else {
+      this.privateSpeed = newSpeed
+    }
+  }
 
-    return statusString
+  /**
+   * The getter for the max speed property.
+   *
+   * @return {number} The max speed of the vehicle/
+   */
+  public get maxSpeed (): number {
+    return this._maxSpeed
   }
 
   /**
@@ -104,8 +90,8 @@ export default class Vehicle {
     this.privateSpeed = (accelerationPower * accelerationTime) + this.privateSpeed
 
     // Ensure that the vehicle does not accelerate beyond max speed
-    if (this.privateSpeed > this.maxSpeed) {
-      this.privateSpeed = this.maxSpeed
+    if (this.privateSpeed > this._maxSpeed) {
+      this.privateSpeed = this._maxSpeed
     }
   }
 

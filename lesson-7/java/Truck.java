@@ -16,19 +16,9 @@ public class Truck extends Vehicle {
     private String liscensePlate;
 
     /**
-     * The color of the vehicle.
-     */
-    private String color;
-
-    /**
      * The number of doors the vehicle has.
      */
     private final int numberOfDoors = 2;
-
-    /**
-     * The current speed of the vehicle.
-     */
-    private int speed;
 
     /**
      * Constructor.
@@ -70,11 +60,11 @@ public class Truck extends Vehicle {
      * @return A string containing all the properties.
      */
     public String status() {
-        final String status = "\n-> Speed: " + this.speed
-                            + "\n-> Max Speed: " + this.maxSpeed
+        final String status = "\n-> Speed: " + super.getSpeed()
+                            + "\n-> Max Speed: " + super.getMaxSpeed()
                             + "\n-> Number of Doors: " + this.numberOfDoors
                             + "\n-> Liscense Plate: " + this.liscensePlate
-                            + "\n-> Color: " + this.color;
+                            + "\n-> Color: " + super.getColor();
 
         return status;
     }
@@ -82,9 +72,9 @@ public class Truck extends Vehicle {
     /**
      * The provideAir method.
      *
-     * @param airPressure
+     * @param airPressure - The air pressure to apply.
      */
     public void provideAir(int airPressure) {
-      this.speed = this.speed - airPressure / 2;
+        super.setSpeed(super.getSpeed() - airPressure / 2);
     }
 }

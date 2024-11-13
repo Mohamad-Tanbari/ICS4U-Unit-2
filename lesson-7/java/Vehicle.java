@@ -73,13 +73,22 @@ public class Vehicle {
      * @param newSpeed - The new speed to set the vehicle to.
      */
     public void setSpeed(int newSpeed) {
-      if (newSpeed < 0) {
-          this.speed = 0;
-      } else if (newSpeed > this.maxSpeed) {
-          this.speed = this.maxSpeed;
-      } else {
-          this.speed = newSpeed;
-      }
+        if (newSpeed < 0) {
+            this.speed = 0;
+        } else if (newSpeed > this.maxSpeed) {
+            this.speed = this.maxSpeed;
+        } else {
+            this.speed = newSpeed;
+        }
+    }
+
+    /**
+     * The getter for the max speed.
+     *
+     * @return The max speed of the vehicle.
+     */
+    public int getMaxSpeed() {
+        return this.maxSpeed;
     }
 
     /**

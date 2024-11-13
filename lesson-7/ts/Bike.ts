@@ -15,7 +15,7 @@ export class Bike extends Vehicle {
   /**
    * The cadence property
    */
-  private _cadence: number = 0
+  private _cadence: number
 
   /**
    * The gear of the bike
@@ -30,6 +30,7 @@ export class Bike extends Vehicle {
    */
   constructor (color: string, maxSpeed: number) {
     super(color, maxSpeed)
+    this._cadence = 0
   }
 
   /**
@@ -48,7 +49,6 @@ export class Bike extends Vehicle {
    */
   public set cadence (newCadence: number) {
     this._cadence = newCadence
-    //super.speed = this.cadence * 2
   }
 
   /**
@@ -79,7 +79,7 @@ export class Bike extends Vehicle {
    * @param {number} appliedPower
    * @param {number} newGear
    */
-  public accelerate (appliedPower: number, newGear: number) {
+  public accelerate (appliedPower: number, newGear: number): void {
     // Update the gear
     this.gear = newGear
     this.cadence = this.cadence + appliedPower

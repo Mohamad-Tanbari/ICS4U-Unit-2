@@ -6,8 +6,8 @@
 * @since   2020-01-01
 */
 
-import { Truck } from "./Truck"
-import { Bike } from "./Bike"
+import { Truck } from './Truck'
+import { Bike } from './Bike'
 
 const bmx = new Bike('Red', 40)
 
@@ -30,15 +30,14 @@ console.log(bigTruck.status())
 
 console.log('\nAccelerating, 10 of power for ten seconds:')
 bigTruck.accelerate(10, 10)
-console.log('New speed: ' + bigTruck.speed)
+console.log(`New speed: ${bigTruck.speed}`)
 
 console.log('\nBreaking, 10 of power for 10 sec.')
 bigTruck.accelerate(10, 10)
-console.log('New speed: ' + bigTruck.speed)
+console.log(`New speed: ${bigTruck.speed}`)
 
 console.log('\nApplyed air pressure of 10:')
 bigTruck.provideAir(10)
-console.log('New speed: ' + bigTruck.speed)
+console.log(`New speed: ${bigTruck.speed}`)
 
 console.log('\nDone.')
-

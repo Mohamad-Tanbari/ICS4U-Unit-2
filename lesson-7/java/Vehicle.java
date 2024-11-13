@@ -11,19 +11,9 @@
  */
 public class Vehicle {
     /**
-     * The liscense plate orf the vehicle.
-     */
-    private String liscensePlate;
-
-    /**
      * The color of the vehicle.
      */
     private String color;
-
-    /**
-     * The number of doors the vehicle has.
-     */
-    private final int numberOfDoors;
 
     /**
      * The current speed of the vehicle.
@@ -33,44 +23,21 @@ public class Vehicle {
     /**
      * The max speed of the vehicle.
      */
-    private final int maxSpeed;
+    private int maxSpeed;
 
     /**
      * Constructor.
      *
      * @param color - The color you want the vehicle to start with.
-     * @param liscensePlate - The liscense plate you want the vehicle to have.
-     * @param numberOfDoors - The number of doors the vehicle should have.
      * @param maxSpeed - The max speed the vehicle can reach.
      */
     public Vehicle(
         String color,
-        String liscensePlate,
-        int numberOfDoors,
         int maxSpeed) {
         // Set the properties
         this.color = color;
-        this.liscensePlate = liscensePlate;
-        this.numberOfDoors = numberOfDoors;
         this.maxSpeed = maxSpeed;
-    }
-
-    /**
-     * The getter for the liscensePlate property.
-     *
-     * @return a string containing the liscense plate.
-     */
-    public String getLiscensePlate() {
-        return this.liscensePlate;
-    }
-
-    /**
-     * The setter for the liscensePlate property.
-     *
-     * @param newLiscensePlate - The new liscense plate you want to assign.
-     */
-    public void setLiscensePlate(String newLiscensePlate) {
-        this.liscensePlate = newLiscensePlate;
+        this.speed = 0;
     }
 
     /**
@@ -101,18 +68,18 @@ public class Vehicle {
     }
 
     /**
-     * The status getter to show info about all properties of the vehicle.
+     * The setter for the speed property.
      *
-     * @return A string containing all the properties.
+     * @param newSpeed - The new speed to set the vehicle to.
      */
-    public String status() {
-        final String status = "\n-> Speed: " + this.speed
-                            + "\n-> Max Speed: " + this.maxSpeed
-                            + "\n-> Number of Doors: " + this.numberOfDoors
-                            + "\n-> Liscense Plate: " + this.liscensePlate
-                            + "\n-> Color: " + this.color;
-
-        return status;
+    public void setSpeed(int newSpeed) {
+      if (newSpeed < 0) {
+          this.speed = 0;
+      } else if (newSpeed > this.maxSpeed) {
+          this.speed = this.maxSpeed;
+      } else {
+          this.speed = newSpeed;
+      }
     }
 
     /**

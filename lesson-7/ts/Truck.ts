@@ -31,7 +31,7 @@ export class Truck extends Vehicle {
    */
   constructor (color: string,
     maxSpeed: number,
-    liscensePlate: string, ) {
+    liscensePlate: string) {
     super(color, maxSpeed)
     this._liscensePlate = liscensePlate
   }
@@ -68,7 +68,7 @@ export class Truck extends Vehicle {
    *
    * @param {number} airPressure
    */
-  public provideAir (airPressure: number) {
+  public provideAir (airPressure: number): void {
     super.speed = super.speed - airPressure / 2
   }
 

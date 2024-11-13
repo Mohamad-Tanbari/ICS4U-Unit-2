@@ -48,6 +48,7 @@ export class Bike extends Vehicle {
    */
   public set cadence (newCadence: number) {
     this._cadence = newCadence
+    //super.speed = this.cadence * 2
   }
 
   /**
@@ -82,7 +83,7 @@ export class Bike extends Vehicle {
     // Update the gear
     this.gear = newGear
     this.cadence = this.cadence + appliedPower
-    super.speed = super.speed + (this.cadence * this.gear)
+    super.speed = super.speed + (this.cadence * newGear)
   }
 
   /**
@@ -92,5 +93,19 @@ export class Bike extends Vehicle {
    */
   public ringBell (): string {
     return 'Ding ding!\n'
+  }
+
+  /**
+   * This getter gives info on all properties of the vehicle.
+   *
+   * @return {string} A string containing all the property values.
+   */
+  public status (): string {
+    const statusString = `-> Speed: ${super.speed}\n` +
+                         `-> Max Speed: ${super.maxSpeed}\n` +
+                         `-> Cadence: ${this.cadence}\n` +
+                         `-> Color: ${super.colour}`
+
+    return statusString
   }
 }

@@ -77,7 +77,7 @@ export class Truck extends Vehicle {
    *
    * @return {string} A string containing all the property values.
    */
-  public get status (): string {
+  public status (): string {
     const statusString = `-> Speed: ${super.speed}\n` +
                          `-> Max Speed: ${super.maxSpeed}\n` +
                          `-> Number of doors: ${this.numberOfDoors}\n` +

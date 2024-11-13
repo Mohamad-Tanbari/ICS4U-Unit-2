@@ -65,6 +65,8 @@ export default class Vehicle {
   public set speed (newSpeed: number) {
     if (newSpeed < 0) {
       this.privateSpeed = 0
+    } else if (newSpeed > this._maxSpeed) {
+      this.privateSpeed = this._maxSpeed
     } else {
       this.privateSpeed = newSpeed
     }

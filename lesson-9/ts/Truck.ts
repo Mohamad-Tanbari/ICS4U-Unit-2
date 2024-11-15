@@ -65,12 +65,16 @@ export class Truck extends Vehicle {
   }
 
   /**
-   * The provide air method to give the truck some air.
+   * Override the brake method to modify it.
    *
+   * @param {number} brakePower
+   * @param {number} brakeTime
    * @param {number} airPressure
    */
-  public provideAir (airPressure: number): void {
-    super.speed = super.speed - airPressure / 2
+  public brake (brakePower: number,
+    brakeTime: number,
+    airPressure: number): void {
+    super.speed = super.speed - (brakePower * brakeTime) - (airPressure * brakeTime)
   }
 
   /**

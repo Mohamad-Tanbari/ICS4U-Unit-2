@@ -33,6 +33,8 @@ final class Main2 {
         final int truckAcceleration = 10;
         final int truckAccelerationTime = 10;
         final int truckAir = 10;
+        final int truckBrakeTime = 2;
+        final int truckBrakePower = 5;
         final int numberOfTruckWheels = 6;
 
         // Create the bike
@@ -69,7 +71,7 @@ final class Main2 {
         System.out.println(newSpeed + bigTruck.getSpeed());
 
         System.out.println("\nApplied air pressure of 10");
-        bigTruck.provideAir(truckAir);
+        bigTruck.brake(truckBrakePower, truckBrakeTime, truckAir);
         System.out.println(newSpeed + bigTruck.getSpeed());
 
         System.out.println("\nDone.");

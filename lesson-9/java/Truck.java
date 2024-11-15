@@ -57,6 +57,21 @@ public class Truck extends Vehicle {
     }
 
     /**
+     * Override the Brake method of the main vehicle class.
+     *
+     * @param brakePower - The brake power.
+     * @param brakeTime - The time you are braking for.
+     * @param airPressure - The air pressure.
+     */
+    public void brake(int brakePower, int brakeTime, int airPressure) {
+        this.setSpeed(
+            this.getSpeed()
+            - (brakePower * brakeTime)
+            - (airPressure * brakeTime)
+        );
+    }
+
+    /**
      * The status getter to show info about all properties of the vehicle.
      *
      * @return A string containing all the properties.
@@ -70,14 +85,5 @@ public class Truck extends Vehicle {
                             + "\n-> Color: " + super.getColor();
 
         return status;
-    }
-
-    /**
-     * The provideAir method.
-     *
-     * @param airPressure - The air pressure to apply.
-     */
-    public void provideAir(int airPressure) {
-        super.setSpeed(super.getSpeed() - airPressure / 2);
     }
 }

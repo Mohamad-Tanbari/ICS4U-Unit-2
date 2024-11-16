@@ -13,17 +13,17 @@ export default class Triangle {
   /**
    * The first sidelength.
    */
-  private _sideLength1: number
+  private readonly _sideLength1: number
 
   /**
    * The second sidelength.
    */
-  private _sideLength2: number
+  private readonly _sideLength2: number
 
   /**
    * The third sidelength.
    */
-  private _sideLength3: number
+  private readonly _sideLength3: number
 
   /**
    * Constructor
@@ -32,7 +32,7 @@ export default class Triangle {
    * @param {number} sideLength2
    * @param {number} sideLength3
    */
-  constructor(sideLength1: number,
+  constructor (sideLength1: number,
     sideLength2: number,
     sideLength3: number) {
     // Set the passed in values to the properties.
@@ -75,6 +75,11 @@ export default class Triangle {
    * @return {number} semiPerimeter.
    */
   public semiPerimeter (): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
     return this.perimeter / 2
   }
 
@@ -100,7 +105,12 @@ export default class Triangle {
    *
    * @return {number} area - The area of the triangle.
    */
-  public area(): number {
+  public area (): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
     const semiPerimeter = this.semiPerimeter()
 
     let area = (semiPerimeter - this.sideLength1) *
@@ -109,8 +119,6 @@ export default class Triangle {
                semiPerimeter
 
     area = Math.sqrt(area)
-
-    area = Number(area.toFixed(2))
 
     return area
   }
@@ -121,6 +129,11 @@ export default class Triangle {
    * @return {number} angle.
    */
   public angle (angleNumber: number): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
     let angle: number
     if (angleNumber === 1) {
       // cos A = (b^2 + c^2 - a^2) / 2bc
@@ -153,27 +166,114 @@ export default class Triangle {
       angle = -1
     }
 
-    angle = Number(angle.toFixed(2))
-
     return angle
   }
 
-
   /**
    * The type function to check what type of triangle it is.
+   *
+   * @return {string} The type of triangle it is.
    */
   public getType (): string {
-    let type: string = '-1'
-    
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return '-1'
+    }
+
     // Equilateral triangle
     if (this.sideLength1 === this.sideLength2 &&
-      this.sideLength3 === this.sideLength1) {
-      type = 'Equilateral'
+      this.sideLength2 === this.sideLength3) {
+      return 'Equilateral'
     }
 
     // Isoceles triangle
+    if (this.sideLength1 === this.sideLength2 ||
+        this.sideLength2 === this.sideLength3 ||
+        this.sideLength1 === this.sideLength3) {
+      return 'Isoceles'
+    }
 
+    // Right angle triange
+    if (this.sideLength1 ** 2 + this.sideLength2 ** 2 === this.sideLength3 ** 2 ||
+        this.sideLength1 ** 2 + this.sideLength3 ** 2 === this.sideLength2 ** 2 ||
+        this.sideLength2 ** 2 + this.sideLength3 ** 2 === this.sideLength1 ** 2) {
+      return 'Right'
+    }
 
-    return type
+    // Scalene
+    return 'Scalene'
+  }
+
+  /**
+   * The height method to get the height of the triangle.
+   *
+   * @param {number} sideNumber - Which side to use for the calculation
+   */
+  public height (sideNumber: number): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
+    let selectedSide: number = 0
+    switch (sideNumber) {
+      case 1:
+        selectedSide = this.sideLength1
+        break
+      case 2:
+        selectedSide = this.sideLength2
+        break
+      case 3:
+        selectedSide = this.sideLength3
+        break
+      default:
+        return -1
+    }
+
+    const area: number = this.area()
+
+    const height: number = 2 * area / selectedSide
+
+    return height
+  }
+
+  /**
+   * The method to get the inner circle of the triangle.
+   *
+   * @return {number} The inner circle of the triangle.
+   */
+  public innerCircleRadius (): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
+    const semiPerimeter: number = this.semiPerimeter()
+    const area: number = this.area()
+
+    const radius: number = area / semiPerimeter
+
+    return radius
+  }
+
+  /**
+   * The method to get the circumcircle radius.
+   *
+   * @return {number} The radius of the circumcirclek.
+   */
+  public circumcircleRadius (): number {
+    // Ensure the triangle is valid
+    if (!this.isValid()) {
+      return -1
+    }
+
+    const area: number = this.area()
+    const allSidesMultiplied: number = this.sideLength1 *
+                                       this.sideLength2 *
+                                       this.sideLength3
+
+    const radius: number = allSidesMultiplied / (4 * area)
+
+    return radius
   }
 }

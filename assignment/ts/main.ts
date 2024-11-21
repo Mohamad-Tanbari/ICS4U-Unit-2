@@ -7,6 +7,11 @@
  */
 
 function blowUp (string: string): string {
+  // Make sure the input is not empty
+  if (string === '') {
+    return "-1"
+  }
+
   let stringCopy = string // Copy of the inputted string, to not modify original
   let newString: string = '' // The new string that will be returned
 
@@ -49,6 +54,23 @@ function blowUp (string: string): string {
 }
 
 const testString: string = '2xy5a55'
+const testString2: string = '5534311'
+const testString3: string = ''
+const testString4: string = 'hello'
 
 console.log(`Original string: ${testString}`)
 console.log(`Blown up string: ${blowUp(testString)}`)
+console.log('')
+
+console.log(`Original string: ${testString2}`)
+console.log(`Blown up string: ${blowUp(testString2)}`)
+console.log('')
+
+console.log(`Original string: ${testString3}`)
+console.log(`Blown up string: ${blowUp(testString3)}`)
+console.log('')
+
+console.log(`Original string: ${testString4}`)
+console.log(`Blown up string: ${blowUp(testString4)}`)
+
+console.log('\nDone.')

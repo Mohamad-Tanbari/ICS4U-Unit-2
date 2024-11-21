@@ -59,6 +59,10 @@ public final class Main {
             newString += String.valueOf(cachedLetter).repeat(cachedNumber);
         }
 
+        if (string == "") {
+            newString = "-1";
+        }
+
         return newString;
     }
 
@@ -68,7 +72,25 @@ public final class Main {
      * @param args unused.
      */
     public static void main(String[] args) {
-        System.out.println("String before blow up: 3a2b55");
-        System.out.println(blowUp("3a2b55"));
+        final String before = "Original string: ";
+        final String after = "Blown up string: ";
+        final String testString1 = "2xy5a55";
+        final String testString2 = "5534311";
+        final String testString3 = "";
+        final String testString4 = "hello";
+
+        System.out.println(before + testString1);
+        System.out.println(after + blowUp(testString1) + "\n");
+
+        System.out.println(before + testString2);
+        System.out.println(after + blowUp(testString2) + "\n");
+
+        System.out.println(before + testString3);
+        System.out.println(after + blowUp(testString3) + "\n");
+
+        System.out.println(before + testString4);
+        System.out.println(after + blowUp(testString4));
+
+        System.out.println("\nDone.");
     }
 }
